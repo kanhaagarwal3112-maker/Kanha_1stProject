@@ -1,80 +1,40 @@
-##used libary tinkter as main module
-import tkinter as tk
-from tkinter import messagebox
+Password Strength Checker
 
-# toggle password visibility
-def toggle_password():
-    global show
-    if show:
-        entry.config(show="*")
-        eye_button.config(text="👁")   
-        show=False
-    else:
-        entry.config(show="")
-        eye_button.config(text="🙈")   
-        show=True
+📋 Project Overview
 
-# this function is used to check password 
-def check_password():
-    password=entry.get()
+The Password Strength Checker is a GUI-based desktop application built with Python and Tkinter. It helps users verify if their passwords meet standard security criteria (length, uppercase, lowercase, numbers, and special characters) before using them.
 
-    has_upper=False
-    has_lower=False
-    has_digit=False
-    has_special=False
+🚀 Features
 
-    special_chars="!@#$%^&*()-_=+{}[];:'\",.<>?/\\|"  
+Real-time Validation: Checks password against 5 security rules.
 
-    for ch in password:
-        if ch.isupper():
-            has_upper=True
-        elif ch.islower():
-            has_lower=True
-        elif ch.isdigit():
-            has_digit=True
-        elif ch in special_chars:
-            has_special=True
+Visual Feedback: Uses pop-up message boxes to tell the user exactly what is missing.
 
- #if else conditional are used to check the password inpputed       
+Visibility Toggle: Includes an "Eye" button to show/hide the password while typing.
 
-    if len(password)<8:
-        messagebox.showerror("password is weak","password must be at least 8 characters long")
-    elif not has_upper:
-        messagebox.showerror("password is weak","password must have at least 1 uppercase letter")
-    elif not has_lower:
-        messagebox.showerror("password is weak","password must have at least 1 lowercase letter")
-    elif not has_digit:
-        messagebox.showerror("password is weak","password must have at least 1 number")
-    elif not has_special:
-        messagebox.showerror("password is weak","password must have at least 1 special character")
-    else:
-        messagebox.showinfo("success","password is strong!")
-        entry.delete(0,tk.END)
+Secure Input: Characters are masked with * by default for privacy.
+
+🛠️ Technologies Used
+
+Language: Python 3.x
+
+Library: Tkinter (Standard GUI toolkit)
+
+⚙️ How to Run
+
+Make sure Python is installed.
+
+Clone the repository or download main.py.
+
+Run the command:
+
+python main.py
 
 
-#this is gui window
-#this adds design to the code and makes it look unique
+🧪 Testing Instructions
 
-window=tk.Tk()
-window.title("password Checker")
-window.geometry("420x260")
-window.configure(bg="#BFEFFF")
+Weak Test: Type "abc" -> Click Check. Result: Error (Too short).
 
-title_label=tk.Label(window,text="password CHECKER",font=("Arial",18,"bold"),bg="#4F7684")
-title_label.pack(pady=10)
+Medium Test: Type "Password123" -> Click Check. Result: Error (No special char).
 
-frame=tk.Frame(window,bg="#BFEFFF")
-frame.pack()
-
-entry=tk.Entry(frame,width=30,show="*",font=("Arial",14))
-entry.pack(side=tk.LEFT,pady=10)
-
-show=False
-eye_button=tk.Button(frame,text="👁",font=("Arial",12),command=toggle_password)
-eye_button.pack(side=tk.LEFT,padx=5)
-
-check_button=tk.Button(window,text="Check password",font=("Arial",14),
-                         bg="#12E119",fg="white",command=check_password)
-check_button.pack(pady=10)
-#this will run the code!
-window.mainloop()
+Strong Test: Type "P@ssword123" -> Click Check. Result: Success Message.

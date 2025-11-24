@@ -1,10 +1,12 @@
 Password Strength Checker
 
-📋 Project Overview
+  Project Overview
 
-The Password Strength Checker is a GUI-based desktop application built with Python and Tkinter. It helps users verify if their passwords meet standard security criteria (length, uppercase, lowercase, numbers, and special characters) before using them.
+The Password Checker is a GUI-based desktop application built with Python and Tkinter. 
+It helps users verify if their passwords meet standard security criteria 
+(length, uppercase, lowercase, numbers, and special character) before using them.
 
-🚀 Features
+  Features
 
 Real-time Validation: Checks password against 5 security rules.
 
@@ -14,13 +16,13 @@ Visibility Toggle: Includes an "Eye" button to show/hide the password while typi
 
 Secure Input: Characters are masked with * by default for privacy.
 
-🛠️ Technologies Used
+  Technologies Used
 
-Language: Python 3.x
+Language: Python3
 
-Library: Tkinter (Standard GUI toolkit)
+Library: Tkinter  (Standard GUI toolkit)
 
-⚙️ How to Run
+   How to Run
 
 Make sure Python is installed.
 
@@ -30,10 +32,10 @@ Run the command:
 
 python main.py
 
+  
+  Testing Instructions
 
-🧪 Testing Instructions
-
-Weak Test: Type "abc" -> Click Check. Result: Error (Too short).
+Weak Test: Type "abcd" -> Click Check. Result: Error (Too short).
 
 Medium Test: Type "Password123" -> Click Check. Result: Error (No special char).
 

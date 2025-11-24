@@ -54,6 +54,7 @@ def check_password():
 
 #this is gui window
 #this adds design to the code and makes it look unique
+
 window=tk.Tk()
 window.title("password Checker")
 window.geometry("420x260")
